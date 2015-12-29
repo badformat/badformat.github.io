@@ -1,0 +1,13 @@
+/.idea
+*.iml
+*/*.iml
+*/target
+*.bat
+.settings
+.project
+.classpath
+.springBeans
+
+.tern-project
+*/bin
+.eclipse-pmd
