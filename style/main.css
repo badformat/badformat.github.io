@@ -28,11 +28,6 @@ h2 {
     font-size: 42px;
 }
 
-h2 {
-  margin-top: 0.5em;
-  padding-top: 0.5em;
-}
-
 h3 {
     font-size: 25px;
 }
@@ -43,12 +38,48 @@ strong {
   color: #333;
 }
 
-#header {
+blockquote {
+    border-left: 0.3em solid #ddd;
     padding: 0.5em 0.5em;
-    text-align: center;
+    background: #eee;
+    margin: 1em auto;
+}
+
+kbd {
+    display: inline-block;
+    border-radius: 3px;
+    padding: 0px 4px;
+    box-shadow: 1px 1px 1px #777;
+    margin: 2px;
+    font-size: small;
+    vertical-align: text-bottom;
+    background: #eee;
+    font-weight: 500;
+    color: #555;
+    cursor: pointer;
+    font-variant: small-caps;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    letter-spacing: 1px;
+}
+#header {
+    text-align: left;
     letter-spacing: 4em;
     background-position: center top;
-    background-repeat: no-repeat;    
+    background-repeat: no-repeat;
+}
+
+#header h2 {
+    margin:0;
+    padding:0;
+}
+
+#main {
+    padding:0 2em;
+}
+
+.nav {
+    background-color: #eee;
 }
 
 #title a {
@@ -64,6 +95,17 @@ strong {
     color: #444;
 }
 
+#articles-list li {
+    list-style: none;
+}
+
+.date {
+    font-size: 10px;
+    margin-left:1em;
+    padding: 0.2em 0.4em;
+    background-color: #ddd;
+    color:#000;
+}
 
 a {
   color: #e81c4f;    
