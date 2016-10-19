@@ -40,7 +40,7 @@ strong {
 
 blockquote {
     border-left: 0.3em solid #ddd;
-    padding: 0.5em 0.5em;
+    padding: 0.59em;
     background: #eee;
     margin: 1em auto;
 }
@@ -80,6 +80,7 @@ kbd {
 
 .nav {
     background-color: #eee;
+    padding: 0.59em;
 }
 
 #title a {
@@ -97,6 +98,7 @@ kbd {
 
 #articles-list li {
     list-style: none;
+    margin-top: 1em;
 }
 
 .date {
