@@ -11,3 +11,5 @@
 .tern-project
 */bin
 .eclipse-pmd
+**/dist
+**/node_modules

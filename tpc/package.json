@@ -1,0 +1,17 @@
+{
+  "name": "tpc",
+  "version": "1.0.0",
+  "main": "test.ts",
+  "repository": {},
+  "author": "zy",
+  "license": "MIT",
+  "scripts": {
+    "test": "tsc && node dist/test.js"
+  },
+  "devDependencies": {
+    "@types/jasmine": "^2.5.47",
+    "@types/node": "^7.0.18",
+    "jasmine": "^2.6.0",
+    "jasmine-core": "^2.6.1"
+  }
+}
