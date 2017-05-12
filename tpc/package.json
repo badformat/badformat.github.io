@@ -6,12 +6,24 @@
   "author": "zy",
   "license": "MIT",
   "scripts": {
-    "test": "tsc && node dist/test.js"
+    "test": "jest"
+  },
+  "jest": {
+    "transform": {
+      ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ]
   },
   "devDependencies": {
-    "@types/jasmine": "^2.5.47",
+    "@types/jest": "^19.2.3",
     "@types/node": "^7.0.18",
-    "jasmine": "^2.6.0",
-    "jasmine-core": "^2.6.1"
+    "jest": "^20.0.1",
+    "ts-jest": "^20.0.3",
+    "typescript": "^2.3.2"
   }
 }
