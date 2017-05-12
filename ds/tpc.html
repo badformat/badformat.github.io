@@ -1,0 +1,79 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+
+    <script data-main="./tpc" src='./require.js'></script>
+
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 50%;
+        }
+
+        td,
+        th {
+            border: 1px solid;
+            margin: 0;
+            padding: 0.3em;
+            text-align: right;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>正常提交</h3>
+    <p id='test1'></p>
+    <main id="tpc">
+        <section>
+            <div>
+                <h4>协同者</h4>
+                <button v-on:click="submitTx">发起事务</button>
+            </div>
+            <table>
+                <caption>事务列表</caption>
+                <thead>
+                    <tr>
+                        <th>id</th>
+                        <th>当前状态</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="tx in co.getTransactions()">
+                        <td>{{tx.txId}}</td>
+                        <td>{{tx.getState().getName()}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section v-for="p in co.getParticipants()">
+            <div>
+                <h4>参与者p.name</h4>
+                <button v-on:click="p.shutdown()">崩溃</button>
+                <button v-on:click="p.recover()">恢复</button>
+            </div>
+            <table>
+                <caption>事务列表</caption>
+                <thead>
+                    <tr>
+                        <th>id</th>
+                        <th>当前状态</th>
+                        <th>timeout</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="tx in p.getTransactions()">
+                        <td>{{tx.txId}}</td>
+                        <td>{{tx.getState().getName()}}</td>
+                        <td>{{tx.timeout}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+</body>
+
+</html>
