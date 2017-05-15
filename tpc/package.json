@@ -6,7 +6,8 @@
   "author": "zy",
   "license": "MIT",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "build": "tsc -m amd"
   },
   "jest": {
     "transform": {
@@ -25,5 +26,8 @@
     "jest": "^20.0.1",
     "ts-jest": "^20.0.3",
     "typescript": "^2.3.2"
+  },
+  "dependencies": {
+    "immutable": "^3.8.1"
   }
 }

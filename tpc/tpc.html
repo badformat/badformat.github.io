@@ -1,0 +1,96 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+
+    <script data-main="./dist/tpc" src='./require.js'></script>
+
+    <style>
+        #tpc {
+            margin: 2em auto;
+            max-width: 80%;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 50%;
+        }
+
+        td,
+        th {
+            border: 1px solid;
+            margin: 0;
+            padding: 0.3em;
+            text-align: right;
+        }
+    </style>
+</head>
+
+<body>
+    <main id="tpc">
+        <section>
+            <div>
+                <h4>协同者</h4>
+                <button v-on:click="submitTx">增加事务</button>
+            </div>
+            <table>
+                <caption>事务列表</caption>
+                <thead>
+                    <tr>
+                        <th>id</th>
+                        <th>当前状态</th>
+                        <th>timeout</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="tx in co.getTransactions().toArray()">
+                        <td>{{tx.id}}</td>
+                        <td>{{tx.getState()}}</td>
+                        <td>{{tx.getTTL()}}</td>
+                        <td>
+                            <button v-on:click="co.startVote(tx.id)" v-if="tx.getState() == 'Init'">发起投票</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section v-for="p in co.getParticipants().toArray()">
+            <div>
+                <h4>参与者{{p.name}}</h4>
+                <button v-on:click="p.disconnect()" v-if="p.isConnected()">模拟故障</button>
+                <button v-on:click="p.reconnect()" v-if="!p.isConnected()">故障恢复</button>
+            </div>
+            <table>
+                <caption>事务列表</caption>
+                <thead>
+                    <tr>
+                        <th>id</th>
+                        <th>当前状态</th>
+                        <th>timeout</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="tx in p.getTransactions().toArray()">
+                        <td>{{tx.id}}</td>
+                        <transition name="fade">
+                            <td>{{tx.getState()}}</td>
+                        </transition>
+
+                        <td>{{tx.getTTL()}}</td>
+                        <td>
+                            <button v-on:click="p.voteCommit(tx.id)" v-if="p.isConnected() && tx.getState() == 'Init'">同意</button>
+                            <button v-on:click="p.voteAbort(tx.id)" v-if="p.isConnected() && tx.getState() == 'Init'">中止</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+</body>
+
+</html>
