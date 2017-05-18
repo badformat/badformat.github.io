@@ -31,6 +31,12 @@
 <body>
     <main id="tpc">
         <section>
+            <p>使用ts简单模拟两阶段提交的练手玩具，发现用typescript和浏览器环境来做练手项目很不错，尤其是分布式的习题，可以用
+                <a href="https://blogs.msdn.microsoft.com/typescript/2015/11/03/what-about-asyncawait/">await和async</a>模拟网络。<a href="https://github.com/zyang42/zyang42.github.io/blob/master/tpc/coordinator.ts">协同者代码</a>，
+                <a href="https://github.com/zyang42/zyang42.github.io/blob/master/tpc/participant.ts">参与者代码，</a>F12可直接调试。
+                <p>
+        </section>
+        <section>
             <div>
                 <h4>协同者</h4>
                 <button v-on:click="submitTx">增加事务</button>
