@@ -82,7 +82,7 @@ kbd {
   word-break: break-all;
 }
 
-@media (min-device-width: 320px)  {
+@media (max-device-width: 600px)  {
     .main {
         max-width: 100%;
     }
