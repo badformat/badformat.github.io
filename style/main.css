@@ -8,7 +8,6 @@ padding: 0;
 body {
   line-height: 1.5;
   padding: 0em 0em;
-  background-color:rgb(246, 243, 243);
 }
 
 h1 {
@@ -75,10 +74,13 @@ kbd {
   margin: 0 auto;
   margin-bottom: 1em;
   max-width: 50%;
-  border-bottom: 2px solid #0f0f0f;
   line-height: 1.7em;
   text-align: justify;
   word-break: break-all;
+}
+
+.main article {
+      border-bottom: 2px solid #0f0f0f;
 }
 
 @media (max-device-width: 600px)  {
@@ -88,8 +90,8 @@ kbd {
 }
     
 .nav {
-    background-color: #eee;
     padding: 0.59em;
+    border-bottom: 2px solid;
 }
 
 #title {
