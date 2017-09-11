@@ -11,3 +11,4 @@
 */bin
 .eclipse-pmd
 **/node_modules
+.vs
