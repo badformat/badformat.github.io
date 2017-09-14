@@ -16,7 +16,8 @@
         <article>
             <h3>json劫持举例</h3>
             <p>如果你查看google各种web应用返回的json字符串，你会发现类似
-                <code class="code">)]}' [["us"]]</code>或者<code class="code">while(1); {"country":["cn", "us"]}</code>的返回值。这个值不是合法的json语法。 下面讲讲这种做法的由来。
+                <code class="code">)]}' [["us"]]</code>或者<code class="code">while(1); {"country":["cn", "us"]}</code>的返回值。这个值不是合法的json语法。
+                下面讲讲这种做法的由来。
             </p>
             <p>
                 我们都知道用http api需要用cookie做鉴权，当你在浏览器输入类似mail.google.com/json?action=inbox的链接时， http请求会带上你在mail.google.com下的cookie，这些cookie里包含了能证明你身份的加密信息，是在你打开mail.google.com
@@ -49,11 +50,12 @@ function Array() {
 var a = ["private stuff"];
 // alert("Data stolen from array: private stuff");
                     </pre>
-                    </code>
+                </code>
             </p>
             <p>
-                目前主流浏览器都不允许重载基本js类型的默认构造器了，
-                但是不排除有其他方法达到这个目的。
+                目前主流浏览器都不允许重载基本js类型的默认构造器了， 但是不排除有其他方法达到这个目的。 在真正的json字符串前放上
+                <code class="code">while(1); </code>之类的代码，可以防止攻击者使用 &lt;script&gt;标签运行自己的构造器导致数据泄露。因为
+                <code class="code">while(1); </code>会导致解析出错或提前死循环。
             </p>
             <p>最后，奉上<a href="https://zhuanlan.zhihu.com/p/28719766">浏览器漏洞挖掘思路</a>。</p>
         </article>
