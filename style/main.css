@@ -53,20 +53,25 @@ kbd {
     letter-spacing: 1px;
 }
 
+.code {
+    background: #f0f0f0;
+}
+
+.block {
+    display: block;
+}
 #header {
-    background-position: center top;
-    background-repeat: no-repeat;
+    border-bottom: 1px solid;
+    padding-left: 1em;
 }
 
 #header h2 {
     margin:0;
     padding:0;
-    text-align: center;
     letter-spacing: 0.1em;
-    background-color: #F5DA55;
     color: rgb(230, 35, 37);
-    font-size: 50px;
-    text-shadow: #0f0f0f 5px 4px 1px;
+    font-size: 2em;
+    text-shadow: #0f0f0f 2px 2px 1px;
 }
 
 .main {
@@ -81,12 +86,6 @@ kbd {
 
 .main article {
       border-bottom: 2px solid #0f0f0f;
-}
-
-@media (max-device-width: 600px)  {
-    .main {
-        max-width: 100%;
-    }
 }
     
 .nav {
@@ -103,24 +102,18 @@ kbd {
 }
 
 .wrapper {
-    position: absolute;
-    bottom: 0;
-    height: 100%;
-    width: 100%;
-    background-color: #323330;
+    width: 50%;
+    margin: 0 auto;
 }
 
 .articles-list li {
-    list-style: none;
-    margin-top: 0.5em;
-    float:left;
-    margin-right: 2em;
+    margin-top: 5px;
 }
 
 .articles-list a {
-    color: #ddd;
+    color: #111111;
+    text-decoration: none;
     font-size: 16px;
-    font-weight: bold;
 }
 
 .articles-list a:hover {
@@ -138,4 +131,13 @@ kbd {
 
 a {
   color: #e81c4f;    
+}
+
+@media (max-device-width: 600px)  {
+    .main {
+        max-width: 100%;
+    }
+    .wrapper {
+        width: 100%;
+    }
 }

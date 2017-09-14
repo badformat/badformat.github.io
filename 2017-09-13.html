@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>zyang42</title>
+    <link href="./style/main.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <main id="main" class="main">
+        <nav class="nav">
+            <a href="index.html">&lt;&lt;</a>
+        </nav>
+        <article>
+            <h3>json劫持举例</h3>
+            <p>如果你查看google各种web应用返回的json字符串，你会发现类似
+                <code class="code">)]}' [["us"]]</code>或者<code class="code">while(1); {"country":["cn", "us"]}</code>的返回值。这个值不是合法的json语法。 下面讲讲这种做法的由来。
+            </p>
+            <p>
+                我们都知道用http api需要用cookie做鉴权，当你在浏览器输入类似mail.google.com/json?action=inbox的链接时， http请求会带上你在mail.google.com下的cookie，这些cookie里包含了能证明你身份的加密信息，是在你打开mail.google.com
+                输入用户密码登录时，google服务器返回到你浏览器的。
+            </p>
+            <p>
+                如果攻击者获得了这些cookie，就能获得你的私有数据。 作为热身，我们先看一种场景： 假设你在访问这个页面时，有一段js代码发起一个到mail.google.com/json?action=inbox的HTTP AJAX请求（使用的是你浏览器本地的合法cookie）
+                获得数据，再使用另一个HTTP AJAX请求将数据发送到我的服务器， 那我不就可以获得你的私有数据了吗？
+            </p>
+            <p>
+                我们都不知道这是不可能的，因为浏览器HTTP AJAX遵守<a href="https://developer.mozilla.org/zh-CN/docs/Web/Security/Same-origin_policy">同源策略</a>，即AJAX只能请求当前所在页面域名的URL，这是浏览器确保的。
+            </p>
+            <p>
+                但是，标签&lt;script&gt;,&lt;img&gt;是不遵守这个策略的，像&lt;script src="mail.google.com/json?action=inbox"&gt;&lt;/script&gt;， 浏览器是会发起请求的，然后把json作为javascript解析并执行（json本身是合法的js代码）。
+            </p>
+            <p>
+                但是，此时数据依然在你本地浏览器上，黑客是无法获取的。于是黑客想到，既然json被浏览器解析执行，那如果能修改浏览器的解析过程，不就可以为所欲为了吗？ 十分不幸，前几年很多浏览器的内置构造函数都可以被重载。比如下面的例子在某些古旧的浏览器上是可以运行的：
+                <code class="code block">
+                    <pre>
+// From Joe Walker
+function Array() {
+    var obj = this;
+    var ind = 0;
+    var getNext = function(x) {
+    obj[ind++] setter = getNext;
+    if (x) alert("Data stolen from array: " + x.toString());
+    };
+    this[ind++] setter = getNext;
+}
+var a = ["private stuff"];
+// alert("Data stolen from array: private stuff");
+                    </pre>
+                    </code>
+            </p>
+            <p>
+                目前主流浏览器都不允许重载基本js类型的默认构造器了，
+                但是不排除有其他方法达到这个目的。
+            </p>
+            <p>最后，奉上<a href="https://zhuanlan.zhihu.com/p/28719766">浏览器漏洞挖掘思路</a>。</p>
+        </article>
+    </main>
+</body>
+
+</html>
