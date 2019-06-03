@@ -1,0 +1,2 @@
+* mysql
+- mysql null值会导致唯一约束失效

@@ -1,0 +1,4 @@
+#+TITLE: 日志
+#+SUBTITLE: Get your hands dirty!
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="./css/style.css" />
+* [[file:til/til.org][TIL]]
