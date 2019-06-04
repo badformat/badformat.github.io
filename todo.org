@@ -4,3 +4,5 @@
 - [ ] 查看jvm线程切换原理
 - [ ] 写文章
 
+* TODO Guava weak value hash map
+* UML Distilled
