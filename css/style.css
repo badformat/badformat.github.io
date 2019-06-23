@@ -1,7 +1,50 @@
-h2 {
-    font:bold;
+html {
+	height: 100%;
+}
+
+body {
+  font-family: "Helvetica", "Arial", sans-serif;
+	font-size: 16px;
+	line-height: 1.5;
+	margin: 0 auto;
+  max-width: 60em;
+  color: #171717;
 }
 
 .title, .subtitle {
-    text-align:left;
+  text-align:left;
+}
+
+.title {
+    margin-top:0.2em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5
+strong {
+  color: #333;
+}
+code,
+pre {
+  background: #eee;
+}
+
+code {
+  padding: 2px 4px;
+  vertical-align: text-bottom;
+}
+
+a {
+	color:blue;
+}
+
+a:hover{
+	color: #000000;
+}
+
+pre {
+  padding: 1em;
 }

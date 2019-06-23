@@ -1,4 +1,15 @@
-#+TITLE: 程序设计
+#+TITLE: Today I learned.
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../css/style.css" />
-* [[file:java.org][Java]]
+* [[File:java.org][Java]]
 * [[file:database.org][Database]]
+* Dev Tools
+** UML
+   - 一个时序图只表示一个user case
+   - 活动图可以表示流程和并行，partion可表示各个行为的执行者
+** emacs
+   - You can change the encoding to use for the file when saving using ‘C-x C-m f’. You can also force this immediately by using ‘C-x C-m c <encoding> RET C-x C-w RET’. 
+   - You can force Emacs to read a file in a specific encoding with ‘C-x RET c C-x C-f’.
+   - If you opened a file and EMACS determined the encoding incorrectly, you can 
+   use ‘M-x revert-buffer-with-coding-system’, to reload the file with a named encoding.
+
+  

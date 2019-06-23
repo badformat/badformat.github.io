@@ -1,4 +1,6 @@
-#+TITLE: 日志
-#+SUBTITLE: Get your hands dirty!
+#+TITLE: Dirty Hands
+#+SUBTITLE: unknown pleasure after hours.
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="./css/style.css" />
-* [[file:til/til.org][TIL]]
+
+* Projects
+- [[https://z42y.github.io/parliament/][parliament]] 从头实现一个分布式key-value服务的过程。

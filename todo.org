@@ -3,7 +3,10 @@
 - [ ] 阅读java源码
 - [ ] 查看jvm线程切换原理
 - [ ] 写文章
-
-* TODO Guava weak value hash map
-* TODO UML Distilled阅读
+* TODO Guava weak value hash map :java:
+* DONE UML Distilled阅读
 * openbsd源码阅读计划
+* TODO Parliament[0%]
+- [ ] accept需要持久化
+- [ ] 性能
+- [ ] 同一paxos实例的并发安全测试用例
