@@ -10,3 +10,5 @@
 - [ ] accept需要持久化
 - [ ] 性能
 - [ ] 同一paxos实例的并发安全测试用例
+
+* https://github.com/danluu/post-mortems 翻译

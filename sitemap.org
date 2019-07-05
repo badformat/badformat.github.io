@@ -1,6 +1,7 @@
 #+TITLE: Sitemap for project site
 
-- [[file:index.org][Unknown Pleasure]]
+- [[file:index.org][BACK PAGES]]
+- [[file:funny.org][funny]]
 - [[file:projects.org][projects]]
 - [[file:quotes.org][quotes]]
 - [[file:todo.org][todo]]
