@@ -1,13 +1,17 @@
 #+TITLE: Sitemap for project site
 
-- [[file:index.org][BACK PAGES]]
 - [[file:funny.org][funny]]
+- [[file:index.org][index]]
 - [[file:projects.org][projects]]
 - [[file:quotes.org][quotes]]
 - [[file:todo.org][todo]]
+- articles
+  - [[file:articles/近期对技术方向的思考.org][近期对技术方向的思考]]
+  - openbsd
+    - [[file:articles/openbsd/opbenbsd.org][opbenbsd]]
 - reading
   - [[file:reading/uml.org][URML精要]]
 - til
-  - [[file:til/til.org][Today I learned.]]
   - [[file:til/database.org][database]]
   - [[file:til/java.org][java]]
+  - [[file:til/til.org][程序设计]]

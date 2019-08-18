@@ -4,3 +4,9 @@
 
 * Projects
 - [[https://z42y.github.io/parliament/][parliament]] 从头实现一个分布式key-value服务的过程。
+
+* Blog
+I'm sorry,I'm not allowed to argue with you unless you've paid. --monty python.
+
+- [[file:articles/%E8%BF%91%E6%9C%9F%E5%AF%B9%E6%8A%80%E6%9C%AF%E6%96%B9%E5%90%91%E7%9A%84%E6%80%9D%E8%80%83.org][2019.8 近期对技术方向的思考]]
+

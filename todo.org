@@ -1,5 +1,4 @@
 * TODO [#A] CompletableFuture分析[0%] :java:
-  SCHEDULED: <2019-06-03 Mon> DEADLINE: <2019-06-15 Sat>
 - [ ] 阅读java源码
 - [ ] 查看jvm线程切换原理
 - [ ] 写文章
@@ -11,4 +10,6 @@
 - [ ] 性能
 - [ ] 同一paxos实例的并发安全测试用例
 
-* https://github.com/danluu/post-mortems 翻译
+* TODO https://github.com/danluu/post-mortems 翻译
+* TODO mutex,conditonal varable,seamphore
+* TODO MySql isolation level explain.
