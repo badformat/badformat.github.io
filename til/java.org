@@ -1,4 +1,0 @@
-* Language
-- Socket isOpen isConnected只判断本端socket。isClosed() tells you whether you have closed this socket.isConnected() tells you whether you have connected this socket.只有在read write时才能发现远端关闭。
-- 数组不能作为map key，array uses object identity for equals and hashCode
-

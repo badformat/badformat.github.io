@@ -1,9 +1,0 @@
-#+TITLE: URML精要
-#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../css/style.css" />
-- 职责驱动设计
-- You should use sequence diagrams 
-  when you want to look at *the behavior of several objects*
-  within a *single use case*.
-- If you want to look at behavior across *many use cases* or *many threads*, 
-  consider an *activity diagram*.
-- CRC (Class-Responsibility-Collaboration)
