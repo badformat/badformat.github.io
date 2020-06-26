@@ -10,6 +10,7 @@ body {
   max-width: 60em;
   color: #171717;
 }
+
 @media screen and (min-width: 800px) { 
   body {
     max-width: 60em;
