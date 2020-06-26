@@ -1,22 +1,17 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-  <meta charset="utf-8" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
   <meta name="generator" content="pandoc" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <title>谈谈“测试驱动设计”里的设计范围</title>
-  <style type="text/css">
-      code{white-space: pre-wrap;}
-      span.smallcaps{font-variant: small-caps;}
-      span.underline{text-decoration: underline;}
-      div.column{display: inline-block; vertical-align: top; width: 50%;}
-  </style>
-  <link rel="stylesheet" href="../css/style.css" />
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" href="css/style.css" type="text/css" />
 </head>
 <body>
-<header>
+<div id="header">
 <h1 class="title">谈谈“测试驱动设计”里的设计范围</h1>
-</header>
+</div>
 <p>最近尝试写了一个<a href="https://en.wikipedia.org/wiki/Skip_list">SkipList</a>的持久化实现， 目标是在磁盘上操作SkipList数据结构和数据，这些数据结构和数据保存在一些自定义的存储格式中。</p>
 <p>和平时写公司业务功能代码一样，我使用了测试驱动开发（TDD，或者叫测试驱动设计，desgin）的过程。 这意味着我首先针对功能写测试代码，然后实现功能，接着在自动测试用例的保护下，演进和重构代码， 如此反复循环。</p>
 <p>但是在做SkipList的持久化实现时，我发现这套流程在本次实践里的作用有限。</p>
@@ -27,7 +22,6 @@
 <p>这些问题让我反思，对于存储结构、网络协议这类设计，其实TDD是无法启发良好的设计的， 因为TDD关注的是代码本身的自洽和设计，而不能完美驱动协议、或者需要领域知识积累（如存储格式设计）的设计。</p>
 <p>对于编程语言、网络协议、数据库存储引擎这类设计，还可能需要发布多个版本，版本要做到向前兼容， 需要很大的智慧和领域知识功底，这些都不是TDD能带来的。</p>
 <p>如果不得不做这类设计，需要前期就尽可能把所有功能、需求都考虑到实现中，而不是先简单实现一个可用的版本， 并且实现需要有灵活性，在之后可以方便兼容和演进，这和代码的灵活性还不一样， 考验的是设计者对领域各种特点和限制的理解。</p>
-<p>所以，如果要在项目中选择编程语言、技术栈时，设计者背景考量很重要，领域专家和普通使用者造的轮子区别很大， 比如scala和go语言。</p>
-<p>当然，如果理解不到领域专家的考虑和取舍，把坏品味当好东西也是常见的，每个人都会在某个领域犯这个错误， 从买房到选车，都是如此。</p>
+<p>所以，和其他技术、软件方法一样，<a href="https://www.zhihu.com/question/37623307/answer/72955853">TDD不是银弹，不可能适合所有的场景，但这不应该成为我们拒绝它的理由</a>，而应该思考为什么没有满足我们的预期。</p>
 </body>
 </html>
