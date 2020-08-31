@@ -11,6 +11,19 @@ body {
     color: #171717;
 }
 
+@media screen and (min-width: 800px) { 
+  body {
+    max-width: 60em;
+  }
+} 
+
+@media screen and (max-width: 800px) { 
+  body {
+    margin: 1em;
+    max-width: 100%;
+  }
+}
+
 .title, .subtitle {
     text-align:left;
 }

@@ -1,34 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>BACK PAGES</title>
-  <link href="./css/style.css" rel="stylesheet" type="text/css" />
-  </head>
-  <body>
-    <header>
-      <h1 class="title">BACK PAGES</h1>
-      <p class="subtitle">unknown pleasure after hours.</p>
-    </header>
-    <main>
-      <h2>Projects</h2>
-      <div>
-	<ul>
-	  <li><a href="https://z42y.github.io/parliament/">parliament</a> 从头实现一个分布式key-value服务的过程。</li>
-	</ul>
-      </div>
 
-      <h2>Blog</h2>
-      <div>
-	<blockquote>
-	  <p>I'm sorry,I'm not allowed to argue with you unless you've paid.</p>
-	  <footer>—monty python</footer>
-	</blockquote>
-	<ul>
-	  <li><a href="logs/2019年对技术方向的反思.html">2019年对技术方向的反思</a></li>
-	</ul>
-      </div>
-    </main>
-  </body>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BACK PAGES</title>
+  <link href="./css/style.css" rel="stylesheet" type="text/css" />
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?1fede1ee211d178cb0746250fb1189c0";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-38218362-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-38218362-1');
+    </script>
+</head>
+
+<body>
+  <header>
+    <h1 class="title">BACK PAGES</h1>
+    <p class="subtitle">unknown pleasure after hours.</p>
+  </header>
+  <main>
+    <h2>PROJECT</h2>
+    <h3>Parliament</h3>
+    <p>
+      <a target="_blank" href="https://github.com/z42y/parliament/">Parliament</a>是一个可容错的、高可用的分布式leveldb，
+      基于dain的<a target="_blank" href="https://github.com/dain/leveldb">java leveldb实现</a>，
+      我添加了redis协议网络接口及基于Paxos的复制状态机分布式实现，
+      是我用来练习分布式系统设计的一个项目，
+      设计实现过程可以参考<a target="_blank" href="https://z42y.github.io/parliament/">这个文档</a>。
+    </p>
+    <h2>BLOG</h2>
+    <div>
+      <ul>
+        <li><a target="_blank" href="logs/tdd-myth.html">谈谈“测试驱动设计”里的设计范围</a></li>
+        <li><a target="_blank" href="logs/2019年对技术方向的反思.html">2019年对技术方向的反思</a></li>
+      </ul>
+    </div>
+  </main>
+</body>
+
 </html>
